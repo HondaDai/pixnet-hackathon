@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %></title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- main JS libs -->
+    <script src="js/libs/modernizr.min.js"></script>
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/libs/jquery-ui.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+
+
+    <link href="styles/animate.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" media="screen" rel="stylesheet" type="text/css">
+
+    <!-- Style LESS 
+    <link href="styles/style.less" media="screen" rel="stylesheet/less" type="text/css">
+    -->
+    <link href="styles/index.less" media="screen" rel="stylesheet/less" type="text/css">
+
+    <!-- LESS.JS -->
+    <script src="js/libs/less.js"></script>
+    
+
+    <!-- General Scripts -->
+    <script src="js/general.js"></script>
+
+  </head>
+
+  <body>
+
+
+    <div class="body-wrap">
+      <!--container-->
+      <div class="container">
+        <%- body %>
+
+
+      </div>
+      <!--/ container -->
+    </div>
+    
+
+
+    <script type="text/javascript" src="/custom_js/jquery.transit.min.js"></script>
+    <script type="text/javascript" src="/custom_js/underscore.js"></script>
+    <script type="text/javascript" src="/custom_js/photowall.js"></script>
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <script type="text/javascript" src="/js/sails.io.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    </body>
+</html>
