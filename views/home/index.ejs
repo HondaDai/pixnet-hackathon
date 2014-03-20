@@ -12,6 +12,8 @@ $(function(){
     });
 
     images_url = _.shuffle(images_url)
+    images_url = images_url.slice(0, 200)
+
     console.log(images_url)
 
     $.photowall(images_url);
