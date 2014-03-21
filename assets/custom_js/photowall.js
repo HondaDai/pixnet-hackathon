@@ -43,7 +43,7 @@
       margin: 0
     });
 
-    var img_containter = $("<div />").css({
+    var img_containter = $("<div class='animated filpInY'/>").css({
       position: 'absolute',
       width: content_width/col_num,
       padding: 0,
@@ -78,7 +78,11 @@
           ic.css({
             top: upper.offset().top + upper.height() - bleed_size,
             left: i%col_num * content_width/col_num
-          }).trigger('move');
+            //opacity: 0
+          })
+          //.transition({ opacity: 0.5, rotateY: 180}).transition({ opacity: 1, rotateY: 360})
+          //.show()
+          .trigger('move');
 
         };
 
@@ -98,16 +102,19 @@
         
 
     var animation = function() {
-      cover_layer.transition({
+      console.log("animation");
+      cover_layer.css({
+        x: 0,
+        y: 0
+      }).transition({
         y: -content_height*0.2,
-        x: -content_width*0.2,
-        complete: animation
-      }, 50000, 'linear');
+        x: -content_width*0.2
+      }, 50000, 'linear', animation);
     };
 
     animation();
 
-
+    window.animation = animation;
 
     //window.images = images;
   }

@@ -1,0 +1,58 @@
+
+<script src="ckeditor/ckeditor.js"></script>
+<script>
+$(function(){
+  window.editor = CKEDITOR.replace( 'editor', {
+    height: 500
+  } );
+
+
+  $("#suggestPhoto").click(function() {
+
+    contents = $(editor.getData()).text();
+
+    getSuggestPhoto(contents, function(photos) {
+      $('.photothumb').empty();
+      _.shuffle(photos).slice(0, 10).forEach(function(p) {
+        //var t = p.medium.split("_");
+        //var square = [t.slice(0, -1), "_q.", t.slice(-1)[0].split(".")[1]].join("");
+        $('.photothumb').append("<img src='"+p.square+"' alt='"+p.title+"'/>");
+      });
+    });
+
+    console.log(editor.getData());
+  });
+
+
+});
+
+
+</script>
+
+<a href="/"><h1>沒圖沒真相</h1></a>
+
+<h2>新增文章</h2>
+
+
+<form>
+<textarea id="editor"></textarea>
+<br>
+
+<div class="photothumb">
+  <a href="#" class="">
+    <img \alt="" src="http://pic.pimg.tw/lovelystacy/4baa22885b2fc_q.jpg">
+  </a>
+
+  <a href="#" class="">
+    <img \alt="" src="http://pic.pimg.tw/lovelystacy/4baa22885b2fc_q.jpg">
+  </a>
+</div>
+
+<br>
+<span id="suggestPhoto" class="btn btn-orange "><span>給我建議圖片！</span></span>
+
+
+
+
+<span  class="btn btn-brown "><span>送出</span></span>
+</form>
