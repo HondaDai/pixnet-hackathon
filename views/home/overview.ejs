@@ -1,8 +1,12 @@
 
 
-<a href="/"><h1>沒圖沒真相</h1></a>
+<a href="/"><h1>Poetry of Life</h1></a>
 
-<h2>新增文章</h2>
+<span  class="btn btn-green " style="float:right;"><a href="/add_article"><span>寫下新心情</span></a></span>
+
+
+<h2>最新文章</h2>
+
 
 <div class="comment-list message-field">
     <ol>
@@ -13,10 +17,14 @@
             <div class="comment-body">
                 <div class="comment-text">
                     <div class="comment-author"><a href="#" class="link-author" hidefocus="true" style="outline: none;">方塊酥</a></div>
-                    <div class="comment-entry">嗚嗚嗚 吃完三媽結果學生證掉了</div>
+                    <div class="comment-entry">Pixnet Hackathon, YA!</div>
                 </div>
             </div>
+
+            <span class="emotion-date">2014/02/22</span>
+            <span class="fa fa-sun-o emotion-icon"></span>
         </li>
+
         <li class="comment even">
             <div class="comment-avatar">
                 <div class="avatar"><img src="http://pic.pimg.tw/synthia/1318234133-387286416_q.jpg" alt=""></div>
@@ -28,14 +36,14 @@
                 </div>
             </div>
             <span class="emotion-date">2014/02/20</span>
-            <span class="fa fa-sun-o emotion-icon"></span>
+            <span class="fa fa-cloud emotion-icon"></span>
         </li>
     </ol>
 </div>
 
 
 
-<h2><span class="glyphicon glyphicon-heart"></span> 統計</h2>
+<h2> 統計</h2>
 
 
 <div class="widget-container widget-graph boxed">
@@ -46,6 +54,12 @@
 
 <script type="text/javascript">
     $(function() {
+
+
+
+
+        // -----
+
         var graphwidth = $('.widget-graph .inner').width();
         $('.widget-graph .graph').css('height', parseInt(graphwidth/2));
         $(window).resize(function() {

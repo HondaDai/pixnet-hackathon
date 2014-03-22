@@ -56,7 +56,7 @@
     });
 
     $("body").append(cover_layer);
-    $("body").append(cover_layer_top);
+    //$("body").append(cover_layer_top);
     
     while (images.length <= minphoto) {
       for (var i in args) {
