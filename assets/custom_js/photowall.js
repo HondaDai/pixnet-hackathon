@@ -37,6 +37,11 @@
       top: 0
     });
 
+    var cover_layer_top = cover_layer.clone().css({
+      background: 'rgba(255, 255, 255, 0.6)',
+
+    });
+
     var img_item = $("<img />").css({
       width: '100%',
       padding: 0,
@@ -51,6 +56,7 @@
     });
 
     $("body").append(cover_layer);
+    $("body").append(cover_layer_top);
     
     while (images.length <= minphoto) {
       for (var i in args) {

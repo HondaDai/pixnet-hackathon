@@ -38,6 +38,14 @@ module.exports.routes = {
 
   'get /add_article': {
     view: 'home/add_article'
+  },
+
+  'get /overview': {
+    view: 'home/overview'
+  },
+
+  'get /rank': {
+    view: 'home/rank'
   }
 
   /*

@@ -15,8 +15,8 @@ jQuery(document).ready(function() {
     });
 
 // Comment list odd/even 
-    $(".comment-list li:even , .product-list .product-item:even").addClass("even");
-    $(".comment-list li:odd , .product-list .product-item:odd").addClass("odd");
+    //$(".comment-list li:even , .product-list .product-item:even").addClass("even");
+    //$(".comment-list li:odd , .product-list .product-item:odd").addClass("odd");
     
 // Body Wrap
     $(".body-wrap").css("min-height", screenHeight);

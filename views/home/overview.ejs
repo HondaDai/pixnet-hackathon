@@ -1,0 +1,115 @@
+
+
+<a href="/"><h1>沒圖沒真相</h1></a>
+
+<h2>新增文章</h2>
+
+<div class="comment-list message-field">
+    <ol>
+        <li class="comment even">
+            <div class="comment-avatar">
+                <div class="avatar"><img src="http://pic.pimg.tw/synthia/1318234133-387286416_q.jpg" alt=""></div>
+            </div>
+            <div class="comment-body">
+                <div class="comment-text">
+                    <div class="comment-author"><a href="#" class="link-author" hidefocus="true" style="outline: none;">方塊酥</a></div>
+                    <div class="comment-entry">嗚嗚嗚 吃完三媽結果學生證掉了</div>
+                </div>
+            </div>
+        </li>
+        <li class="comment even">
+            <div class="comment-avatar">
+                <div class="avatar"><img src="http://pic.pimg.tw/synthia/1318234133-387286416_q.jpg" alt=""></div>
+            </div>
+            <div class="comment-body">
+                <div class="comment-text">
+                    <div class="comment-author"><a href="#" class="link-author" hidefocus="true" style="outline: none;">方塊酥</a></div>
+                    <div class="comment-entry">嗚嗚嗚 吃完三媽結果學生證掉了</div>
+                </div>
+            </div>
+            <span class="emotion-date">2014/02/20</span>
+            <span class="fa fa-sun-o emotion-icon"></span>
+        </li>
+    </ol>
+</div>
+
+
+
+<h2><span class="glyphicon glyphicon-heart"></span> 統計</h2>
+
+
+<div class="widget-container widget-graph boxed">
+    <div class="inner">
+        <div id="graph" class="graph"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        var graphwidth = $('.widget-graph .inner').width();
+        $('.widget-graph .graph').css('height', parseInt(graphwidth/2));
+        $(window).resize(function() {
+            graphwidth = $('.widget-graph .inner').width();
+            $('.widget-graph .graph').css('height', parseInt(graphwidth/2));
+        });
+
+        var d1 = [[0, 9], [1, 23], [1.6, 8], [2.2, 24], [2.8, 18], [4, 36]],
+        graphholder = $("#graph"),
+        plot = $.plot(graphholder, [d1], {
+            colors: ["#ee5190", "#ee5190", "#ee5190", "#ee5190", "#ee5190"],
+            xaxis: {
+                min: null,
+                max: null
+            },
+            yaxis: {
+                autoscaleMargin: 0.02
+            },
+            series: {
+                lines: {
+                    show: true,
+                    lineWidth: 2,
+                    fill: true,
+                    fillColor: "rgba(255,168,0,0.11)"
+                },
+                points: {
+                    show: true,
+                    radius: 5,
+                    lineWidth: 2,
+                    fillColor: "#fff"
+                },
+                shadowSize: 0
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                margin: 15,
+                color: "#333",
+                borderColor: "#e5e5e5"
+            }
+        });
+
+        function showTooltip(x, y, contents) {
+            $("<div id='graph-tooltip'>" + contents + "</div>").css({top: y - 60, left: x - 28}).appendTo("body").fadeIn(200);
+        }
+
+        var previousPoint = null;
+        graphholder.on("plothover", function (event, pos, item) {
+
+            if (item) {
+                if (previousPoint != item.dataIndex) {
+
+                    previousPoint = item.dataIndex;
+
+                    $("#graph-tooltip").remove();
+                    var x = item.datapoint[0].toFixed(2),
+                            y = item.datapoint[1].toFixed(2);
+
+                    showTooltip(item.pageX, item.pageY, '$' + y*100);
+                }
+            } else {
+                $("#graph-tooltip").remove();
+                previousPoint = null;
+            }
+        });
+    });
+</script>
